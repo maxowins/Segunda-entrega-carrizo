@@ -1,89 +1,182 @@
+<!-- =========================
+     index.html (RAÍZ DEL PROYECTO)
+     ========================= -->
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" type="image/png" href="img/logo.png">
-    <title>De todo Bazar</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Bootstrap CSS (CDN) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- CSS propio (va después para poder "pisar" estilos de Bootstrap) -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="img/logo.png">
+
+  <title>De todo Bazar</title>
 </head>
 
 <body>
 
-    <!-- header -->
-    <header>
-        <div class="encabezado">
-            <img src="/img/logo.png" alt="logo" class="logo">
-            <h2 class="titulo-web">De todo Bazar</h2>
-            <div class="iconos">
-                <span>👤</span>
-                <label>Mi cuenta</label>
-                <span>🛒</span>
-                <label>Carrito</label>
-                <span>🔔</span>
-                <label>Notificaciones</label>
-            </div>
+  <!-- =========================
+       HEADER (estilo MercadoLibre)
+       ========================= -->
+  <header class="ml-header">
+
+    <div class="container py-3">
+      <div class="row align-items-center g-2">
+
+        <!-- Logo -->
+        <div class="col-12 col-md-2 text-center text-md-start">
+          <a href="index.html" class="d-inline-flex align-items-center text-decoration-none">
+            <img src="img/logo.png" alt="Logo De todo Bazar" class="ml-logo">
+            <span class="ms-2 fw-semibold text-dark">De todo Bazar</span>
+          </a>
         </div>
 
-    <nav>
-        <ul>
-            <li><a href="/index.html">Inicio</a></li>
-            <li><a href="/pages/productos.html">Productos</a></li>
-            <li><a href="/pages/contacto.html">Contacto</a></li>
+        <!-- Buscador -->
+        <div class="col-12 col-md-7">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Buscar productos, marcas y más..." aria-label="Buscar">
+            <button class="btn btn-light" type="button">Buscar</button>
+          </div>
+        </div>
+
+        <!-- Accesos -->
+        <div class="col-12 col-md-3">
+          <div class="d-flex justify-content-center justify-content-md-end gap-3">
+            <a href="#" class="ml-link">👤 Mi cuenta</a>
+            <a href="#" class="ml-link">🛒 Carrito</a>
+            <a href="#" class="ml-link d-none d-md-inline">🔔 Notificaciones</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Nav -->
+    <nav class="ml-nav">
+      <div class="container">
+        <ul class="nav py-2">
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="pages/productos.html">Productos</a></li>
+          <li class="nav-item"><a class="nav-link" href="pages/contacto.html">Contacto</a></li>
         </ul>
+      </div>
     </nav>
 
-        <form class="buscador">
-            <input type="text" placeholder="Buscar productos, marcas y más...">
-        </form>
-    </header>
+  </header>
 
-    <!-- Contenido principal-->
-    <main>
-        <section>
-            <h1>Bienvenido a De Todo Bazar</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod assumenda delectus quae, cum voluptas animi autem pariatur voluptatem, tempore, at harum vitae. Omnis vel molestiae quod, quas magnam laborum nobis.</p>
-        </section>
+  <!-- =========================
+       CONTENIDO PRINCIPAL
+       ========================= -->
+  <main class="container my-4">
 
-        <div class="grilla">
+    <!-- Bienvenida -->
+    <section class="mb-4 home-section">
+      <div class="home-box">
+        <h1 class="h3 home-title">Bienvenido a De Todo Bazar</h1>
+        <p class="mb-1">Encontrá productos para el hogar, accesorios y más.</p>
+        <p class="text-muted mb-0">
+          Esta es una tienda de práctica para el curso. Más adelante voy a agregar más productos y secciones.
+        </p>
+      </div>
+    </section>
 
-            <article>
-                <h2>Lentes Bluelight</h2>
-                <img src="img/gafas.webp" alt="">
+    <!-- Productos destacados -->
+    <section class="home-section">
+      <div class="home-box">
+
+        <!-- Banner simple (detalle visual) -->
+        <div class="alert alert-info py-2 mb-3" role="alert">
+          🚚 Envío gratis en compras mayores a $25.000
+        </div>
+
+        <h2 class="h5 mb-3 home-title">Destacados</h2>
+
+        <!-- Grilla responsive con Bootstrap -->
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-3">
+
+          <!-- Card 1 -->
+          <div class="col">
+            <article class="card h-100">
+              <img src="img/gafas.webp" class="card-img-top" alt="Lentes bluelight">
+              <div class="card-body">
+                <h3 class="h6 card-title">Lentes Bluelight</h3>
+                <p class="card-text text-muted mb-2">Protección para pantallas.</p>
+                <a href="pages/productos.html" class="btn btn-sm btn-primary">Ver más</a>
+              </div>
             </article>
+          </div>
 
-            <article>
-                <h2>Portallaves</h2>
-                <img src="img/portallaves.webp" alt="">
+          <!-- Card 2 -->
+          <div class="col">
+            <article class="card h-100">
+              <img src="img/portallaves.webp" class="card-img-top" alt="Portallaves decorativo">
+              <div class="card-body">
+                <h3 class="h6 card-title">Portallaves</h3>
+                <p class="card-text text-muted mb-2">Orden y decoración.</p>
+                <a href="pages/productos.html" class="btn btn-sm btn-primary">Ver más</a>
+              </div>
             </article>
+          </div>
 
-            <article>
-                <h2>Teclado</h2>
-                <img src="img/teclado.webp" alt="">
+          <!-- Card 3 -->
+          <div class="col">
+            <article class="card h-100">
+              <img src="img/teclado.webp" class="card-img-top" alt="Teclado gamer">
+              <div class="card-body">
+                <h3 class="h6 card-title">Teclado</h3>
+                <p class="card-text text-muted mb-2">Ideal para escritorio.</p>
+                <a href="pages/productos.html" class="btn btn-sm btn-primary">Ver más</a>
+              </div>
             </article>
+          </div>
 
-            <article>
-                <h2>Zapatillas</h2>
-                <img src="img/zapatillas.webp" alt="">
+          <!-- Card 4 -->
+          <div class="col">
+            <article class="card h-100">
+              <img src="img/zapatillas.webp" class="card-img-top" alt="Zapatillas deportivas">
+              <div class="card-body">
+                <h3 class="h6 card-title">Zapatillas</h3>
+                <p class="card-text text-muted mb-2">Comodidad para todos los días.</p>
+                <a href="pages/productos.html" class="btn btn-sm btn-primary">Ver más</a>
+              </div>
             </article>
+          </div>
 
         </div>
-    </main>
+      </div>
+    </section>
 
-    <!-- footer -->
-    <footer>
-        <p>Todos los derechos reservados</p>
-        <a href="https://www.instagram.com" target="_blank">
-            <img src="img/instagram.png" alt="instagram">
-        </a>
-        <a href="https://www.facebook.com" target="_blank">
-            <img src="/img/facebook.png" alt="facebook.png">
-        </a>
-        <a href="https://x.com/?lang=es" target="_blank">
-            <img src="/img/X.png" alt="X.png">
-        </a>
-    </footer>
+  </main>
+
+  <!-- =========================
+       FOOTER
+       ========================= -->
+  <footer class="text-center py-4">
+    <p class="mb-2">Todos los derechos reservados</p>
+
+    <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+      <img src="img/instagram.png" alt="Instagram" class="ml-social">
+    </a>
+
+    <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+      <img src="img/facebook.png" alt="Facebook" class="ml-social">
+    </a>
+
+    <a href="https://x.com/?lang=es" target="_blank" rel="noopener noreferrer">
+      <img src="img/X.png" alt="X" class="ml-social">
+    </a>
+  </footer>
+
+  <!-- Bootstrap JS (Bundle) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
+
 </html>

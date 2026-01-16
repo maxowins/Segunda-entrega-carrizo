@@ -1,97 +1,193 @@
+<!-- =========================
+     pages/productos.html
+     ========================= -->
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="icon" type="image/png" href="/img/logo.png">
-    <title>Productos - De todo Bazar</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Bootstrap CSS (CDN) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- CSS propio -->
+  <link rel="stylesheet" href="../css/style.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="../img/logo.png">
+
+  <title>Productos - De todo Bazar</title>
 </head>
 
 <body>
 
-    <!-- header -->
-    <header>
-        <div class="encabezado">
-            <img src="/img/logo.png" alt="logo" class="logo">
+  <!-- =========================
+       HEADER (estilo MercadoLibre)
+       ========================= -->
+  <header class="ml-header">
 
-            <h2 class="titulo-web">De todo Bazar</h2>
+    <div class="container py-3">
+      <div class="row align-items-center g-2">
 
-            <div class="iconos">
-                <span>👤</span>
-                <label>Mi cuenta</label>
-                <span>🛒</span>
-                <label>Carrito</label>
-                <span>🔔</span>
-                <label>Notificaciones</label>
-            </div>
+        <!-- Logo -->
+        <div class="col-12 col-md-2 text-center text-md-start">
+          <a href="../index.html" class="d-inline-flex align-items-center text-decoration-none">
+            <img src="../img/logo.png" alt="Logo De todo Bazar" class="ml-logo">
+            <span class="ms-2 fw-semibold text-dark">De todo Bazar</span>
+          </a>
         </div>
 
-    <nav>
-        <ul>
-            <li><a href="/index.html">Inicio</a></li>
-            <li><a href="/pages/productos.html">Productos</a></li>
-            <li><a href="/pages/contacto.html">Contacto</a></li>
+        <!-- Buscador -->
+        <div class="col-12 col-md-7">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Buscar productos, marcas y más..." aria-label="Buscar">
+            <button class="btn btn-light" type="button">Buscar</button>
+          </div>
+        </div>
+
+        <!-- Accesos -->
+        <div class="col-12 col-md-3">
+          <div class="d-flex justify-content-center justify-content-md-end gap-3">
+            <a href="#" class="ml-link">👤 Mi cuenta</a>
+            <a href="#" class="ml-link">🛒 Carrito</a>
+            <a href="#" class="ml-link d-none d-md-inline">🔔 Notificaciones</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Nav -->
+    <nav class="ml-nav">
+      <div class="container">
+        <ul class="nav py-2">
+          <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="productos.html">Productos</a></li>
+          <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
         </ul>
+      </div>
     </nav>
 
-        <form class="buscador">
-            <input type="text" placeholder="Buscar productos, marcas y más...">
-        </form>
-    </header>
+  </header>
 
+  <!-- =========================
+       CONTENIDO PRINCIPAL
+       ========================= -->
+  <main class="container my-4">
 
-    <!-- Contenido principal-->
-    <main>
+    <section class="mb-3">
+      <h1 class="h3 mb-1">Tus productos</h1>
+      <p class="text-muted mb-0">Explorá categorías y encontrá lo que necesitás.</p>
+    </section>
 
-        <aside>
-            <h3>categorías</h3>
-            <ul>
-                <li>Lentes</li>
-                <li>Decoración</li>
-                <li>Teclados</li>
-                <li>Zapatillas</li>
+    <div class="row g-3">
+
+      <!-- Sidebar categorías -->
+      <aside class="col-12 col-md-3">
+        <div class="card">
+          <div class="card-body">
+            <h2 class="h6 mb-3">Categorías</h2>
+
+            <ul class="list-group">
+              <li class="list-group-item">Lentes</li>
+              <li class="list-group-item">Decoración</li>
+              <li class="list-group-item">Teclados</li>
+              <li class="list-group-item">Zapatillas</li>
             </ul>
-        </aside>
 
-        <div class="grilla">
+            <p class="text-muted mt-3 mb-0" style="font-size: 13px;">
+              *Catálogo de prueba para el curso.
+            </p>
+          </div>
+        </div>
+      </aside>
 
-            <article>
-                <h2>Lentes Bluelight</h2>
-                <img src="/img/gafas.webp" alt="">
+      <!-- Grilla de productos -->
+      <section class="col-12 col-md-9">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
+
+          <!-- Producto 1 -->
+          <div class="col">
+            <article class="card h-100">
+              <img src="../img/gafas.webp" class="card-img-top" alt="Lentes bluelight">
+              <div class="card-body">
+                <h3 class="h6 card-title">Lentes Bluelight</h3>
+                <p class="card-text mb-1">$ 9.999</p>
+                <p class="text-muted" style="font-size: 13px;">Protección para pantallas.</p>
+                <button class="btn btn-sm btn-primary" type="button">Agregar</button>
+              </div>
             </article>
+          </div>
 
-            <article>
-                <h2>Portallaves</h2>
-                <img src="/img/portallaves.webp" alt="">
+          <!-- Producto 2 -->
+          <div class="col">
+            <article class="card h-100">
+              <img src="../img/portallaves.webp" class="card-img-top" alt="Portallaves decorativo">
+              <div class="card-body">
+                <h3 class="h6 card-title">Portallaves</h3>
+                <p class="card-text mb-1">$ 6.500</p>
+                <p class="text-muted" style="font-size: 13px;">Orden y decoración.</p>
+                <button class="btn btn-sm btn-primary" type="button">Agregar</button>
+              </div>
             </article>
+          </div>
 
-            <article>
-                <h2>Teclado</h2>
-                <img src="/img/teclado.webp" alt="">
+          <!-- Producto 3 -->
+          <div class="col">
+            <article class="card h-100">
+              <img src="../img/teclado.webp" class="card-img-top" alt="Teclado gamer">
+              <div class="card-body">
+                <h3 class="h6 card-title">Teclado</h3>
+                <p class="card-text mb-1">$ 24.990</p>
+                <p class="text-muted" style="font-size: 13px;">Ideal para escritorio.</p>
+                <button class="btn btn-sm btn-primary" type="button">Agregar</button>
+              </div>
             </article>
+          </div>
 
-            <article>
-                <h2>Zapatillas</h2>
-                <img src="/img/zapatillas.webp" alt="">
+          <!-- Producto 4 -->
+          <div class="col">
+            <article class="card h-100">
+              <img src="../img/zapatillas.webp" class="card-img-top" alt="Zapatillas deportivas">
+              <div class="card-body">
+                <h3 class="h6 card-title">Zapatillas</h3>
+                <p class="card-text mb-1">$ 39.990</p>
+                <p class="text-muted" style="font-size: 13px;">Comodidad para todos los días.</p>
+                <button class="btn btn-sm btn-primary" type="button">Agregar</button>
+              </div>
             </article>
+          </div>
 
         </div>
-    </main>
+      </section>
 
-    <!-- footer -->
-    <footer>
-        <p>Todos los derechos reservados</p>
-        <a href="https://www.instagram.com" target="_blank">
-            <img src="/img/instagram.png" alt="instagram">
-        </a>
-        <a href="https://www.facebook.com" target="_blank">
-            <img src="/img/facebook.png" alt="facebook.png">
-        </a>
-        <a href="https://x.com/?lang=es" target="_blank">
-            <img src="/img/X.png" alt="X.png">
-        </a>
-    </footer>
+    </div>
+
+  </main>
+
+  <!-- =========================
+       FOOTER
+       ========================= -->
+  <footer class="text-center py-4">
+    <p class="mb-2">Todos los derechos reservados</p>
+
+    <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+      <img src="../img/instagram.png" alt="Instagram" class="ml-social">
+    </a>
+
+    <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+      <img src="../img/facebook.png" alt="Facebook" class="ml-social">
+    </a>
+
+    <a href="https://x.com/?lang=es" target="_blank" rel="noopener noreferrer">
+      <img src="../img/X.png" alt="X" class="ml-social">
+    </a>
+  </footer>
+
+  <!-- Bootstrap JS (Bundle) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
+
 </html>
