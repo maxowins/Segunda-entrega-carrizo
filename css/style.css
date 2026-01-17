@@ -1,235 +1,178 @@
-/* reset */
+/* =========================
+   style.css (css/style.css)
+   ========================= */
+
+/* =========================
+   RESET + BASE
+   ========================= */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-/* fondo */
+
+/* =========================
+   VARIABLES (paleta)
+   ========================= */
+:root {
+  --ml-yellow: #fff159;
+  --ml-blue: #3483fa;
+  --ml-gray: #ededed;
+  --text-dark: #333;
+  --border-soft: #d9d9d9;
+}
+
+/* =========================
+   BODY + LAYOUT GENERAL
+   ========================= */
+html,
 body {
-  background-color: #f0f0f0;
+  height: 100%;
 }
 
-/* header */
-header {
-  text-align: center;
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--ml-gray);
+  color: var(--text-dark);
+  font-family: Arial, Helvetica, sans-serif; /* simple, estilo junior */
 }
 
-header img {
-  width: 150px;
+main {
+  flex: 1;
+}
+
+/* =========================
+   HEADER (estilo MercadoLibre)
+   ========================= */
+.ml-header {
+  background-color: var(--ml-yellow);
+  border-bottom: 1px solid #e3d95f;
+}
+
+.ml-logo {
+  width: 48px;
   height: auto;
 }
 
-header nav ul {
-  list-style: none;
-  padding: 0;
-}
-
-header nav ul li {
-  display: inline-block;
-  margin: 0 15px;
-}
-
-header nav ul li a {
+.ml-link {
   text-decoration: none;
-  color: black;
-  text-transform: uppercase;
+  color: var(--text-dark);
   font-size: 14px;
 }
 
-header form {
-  margin-top: 15px;
+.ml-link:hover {
+  text-decoration: underline;
 }
 
-/* contenido */
-main {
-  text-align: center;
-  color: black;
-  width: 90%;
-  margin: auto;
+.ml-nav {
+  background-color: var(--ml-yellow);
 }
 
-/* secciones */
-main section {
-  width: 80%;
-  margin: auto;
+.ml-nav .nav-link {
+  color: var(--text-dark);
+  font-size: 14px;
 }
 
-/* grilla productos */
-main .grilla {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 25px;
-  justify-items: center;
-  margin-top: 25px;
+.ml-nav .nav-link:hover {
+  color: #000;
+  text-decoration: underline;
 }
 
-main article {
-  text-align: center;
+/* Link activo (Inicio / Productos / Contacto) */
+.ml-nav .nav-link.active {
+  font-weight: 600;
+  text-decoration: underline;
 }
 
-main article img {
-  max-width: 200px;
-  height: auto;
-  display: block;
-  margin: auto;
+/* =========================
+   HOME (bienvenida + destacados)
+   ========================= */
+.home-box {
+  background: #fff;
+  border: 1px solid var(--border-soft);
+  border-radius: 8px;
+  padding: 16px;
 }
 
-/* aside categorias */
-aside {
-  float: left;
-  width: 20%;
-  text-align: left;
+.home-title {
+  font-weight: 600;
 }
 
-aside ul {
-  list-style: none;
-  padding: 0;
+.home-section {
+  margin-bottom: 18px;
 }
 
-aside li {
-  margin-bottom: 10px;
+/* Banner de "envío gratis" (home) */
+.alert-info {
+  border: 1px solid var(--border-soft);
 }
 
-/* formulario de contacto */
-section.formulario {
-  display: flex;
-  justify-content: center;
-  margin-top: 25px;
+/* =========================
+   TARJETAS / PRODUCTOS
+   ========================= */
+.card {
+  border: 1px solid var(--border-soft);
+  border-radius: 8px;
+  transition: transform 0.2s;
 }
 
-section.formulario form {
-  display: flex;
-  flex-direction: column;
-  width: 300px;
-  text-align: left;
-  gap: 10px;
+.card-img-top {
+  height: 170px;
+  object-fit: cover;
 }
 
-section.formulario button {
-  margin-top: 10px;
-  padding: 8px;
-  background-color: black;
-  color: white;
-  border: none;
-  cursor: pointer;
+.card:hover {
+  transform: translateY(-2px);
 }
 
-/* footer */
+/* Botón primary más parecido a ML */
+.btn-primary {
+  background-color: var(--ml-blue);
+  border-color: var(--ml-blue);
+}
+
+.btn-primary:hover {
+  background-color: #2968c8;
+  border-color: #2968c8;
+}
+
+/* =========================
+   CONTACTO (ayuda + formulario)
+   ========================= */
+.btn-outline-primary {
+  border-color: var(--ml-blue);
+  color: var(--ml-blue);
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--ml-blue);
+  color: #fff;
+}
+
+/* =========================
+   FOOTER
+   ========================= */
 footer {
   text-align: center;
-  margin-top: 40px;
+  padding: 20px 0;
 }
 
-footer img {
-  width: 40px;
-}
-/* header general */
-header {
-    background-color: #ffffff;
-    padding: 15px 20px;
-    border-bottom: 1px solid #dcdcdc;
+.ml-social {
+  width: 36px;
+  height: auto;
+  margin: 0 6px;
 }
 
-/* parte superior del header */
-header .encabezado {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
+/* =========================
+   RESPONSIVE (detalle simple)
+   ========================= */
+@media (max-width: 576px) {
+  .card-img-top {
+    height: 150px;
+  }
 
-/* logo */
-header .logo {
-    width: 60px;
-    height: auto;
-}
-
-/* titulo */
-header .titulo-web {
-    font-size: 20px;
-    margin-left: 10px;
-    margin-right: auto;
-}
-
-/* iconos */
-header .iconos span {
-    font-size: 20px;
-    margin-left: 15px;
-    cursor: pointer;
-}
-
-/* nav */
-header nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-    padding: 0;
-    margin-top: 15px;
-}
-
-header nav ul li a {
-    text-decoration: none;
-    color: #3a3a3a;
-    font-size: 14px;
-}
-
-/* buscador */
-header .buscador {
-    margin-top: 10px;
-    display: flex;
-    justify-content: center;
-}
-
-header .buscador input {
-    width: 40%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-}
-/* caja de preguntas */
-.preguntas {
-    width: 70%;
-    margin: 25px auto;
-    padding: 25px;
-    border: 1px solid #cfcfcf;
-    background-color: #ffffff;
-    text-align: center;
-}
-
-.preguntas p {
-    margin: 10px 0;
-}
-
-.preguntas a {
-    color: #2f54eb;
-    text-decoration: none;
-    font-size: 15px;
-}
-
-
-/* formulario contacto */
-.formulario {
-    display: flex;
-    justify-content: center;
-    margin-top: 25px;
-}
-
-.formulario form {
-    display: flex;
-    flex-direction: column;
-    width: 300px;
-    gap: 10px;
-}
-
-.formulario button {
-    margin-top: 10px;
-    padding: 8px;
-    border: none;
-    background-color: #2f54eb;
-    color: white;
-    cursor: pointer;
-    border-radius: 3px;
-}
-
-.formulario button:hover {
-    background-color: #1d3fcc;
+  footer {
+    padding: 25px 0;
+  }
 }
