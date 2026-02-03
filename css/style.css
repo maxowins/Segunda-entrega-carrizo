@@ -1,20 +1,38 @@
-/* =========================
-   style.css (css/style.css)
-   ========================= */
+@charset "UTF-8";
+/* sass/style.scss */
+/* Utilities */
+/* sass/utilities/_variables.scss */
+/* Paleta */
+/* Tipografía */
+/* Medidas */
+/* Sombras / transiciones */
+/* Breakpoints */
+/* Extra: operador (ejemplo) */
+/* Focus ring */
+/* sass/utilities/_mixin.scss */
+/* sass/utilities/_placeholders.scss */
+.promo-item, .feature-card, .home-box {
+  background: #fff;
+  border: 1px solid #d9d9d9;
+  border-radius: 8px;
+}
 
-/* =========================
-   RESET + BASE
-   ========================= */
+.card {
+  border: 1px solid #d9d9d9;
+  border-radius: 8px;
+}
+
+/* Base */
+/* sass/base/_reset.scss */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* =========================
-   VARIABLES (paleta)
-   ========================= */
+/* sass/base/_globals.scss */
 :root {
+  /* Genero variables CSS desde variables SCSS (queda prolijo y editable) */
   --ml-yellow: #fff159;
   --ml-blue: #3483fa;
   --ml-gray: #ededed;
@@ -22,76 +40,288 @@
   --border-soft: #d9d9d9;
 }
 
-/* =========================
-   BODY + LAYOUT GENERAL
-   ========================= */
 html,
 body {
   height: 100%;
 }
 
 body {
-  display: flex;
-  flex-direction: column;
   background-color: var(--ml-gray);
   color: var(--text-dark);
-  font-family: Arial, Helvetica, sans-serif; /* simple, estilo junior */
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-main {
-  flex: 1;
+/* Utilidades generadas con @each (cumple operadores/dinámico) */
+.u-p-0 {
+  padding: 0px;
 }
 
-/* =========================
-   HEADER (estilo MercadoLibre)
-   ========================= */
+.u-gap-0 {
+  gap: 0px;
+}
+
+.u-p-4 {
+  padding: 4px;
+}
+
+.u-gap-4 {
+  gap: 4px;
+}
+
+.u-p-8 {
+  padding: 8px;
+}
+
+.u-gap-8 {
+  gap: 8px;
+}
+
+.u-p-12 {
+  padding: 12px;
+}
+
+.u-gap-12 {
+  gap: 12px;
+}
+
+.u-p-16 {
+  padding: 16px;
+}
+
+.u-gap-16 {
+  gap: 16px;
+}
+
+.u-p-24 {
+  padding: 24px;
+}
+
+.u-gap-24 {
+  gap: 24px;
+}
+
+.u-p-32 {
+  padding: 32px;
+}
+
+.u-gap-32 {
+  gap: 32px;
+}
+
+/* Ajustes pequeños para textos usados en productos */
+.product-desc {
+  font-size: 13px;
+  margin-bottom: 0.5rem;
+}
+
+/* Layout */
+/* sass/layout/_header.scss */
 .ml-header {
   background-color: var(--ml-yellow);
   border-bottom: 1px solid #e3d95f;
 }
-
-.ml-logo {
+.ml-header .ml-logo {
   width: 48px;
   height: auto;
+  transition: transform 0.2s ease;
 }
-
-.ml-link {
+.ml-header .ml-logo:hover {
+  transform: scale(1.04);
+}
+.ml-header .ml-link {
   text-decoration: none;
   color: var(--text-dark);
   font-size: 14px;
 }
-
-.ml-link:hover {
+.ml-header .ml-link:hover {
   text-decoration: underline;
 }
-
-.ml-nav {
-  background-color: var(--ml-yellow);
+.ml-header .ml-link:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 0.25rem rgba(52, 131, 250, 0.25);
+  border-radius: 6px;
 }
 
+/* Nav (sirve para navbar y para nav clásico) */
+.ml-nav {
+  background-color: var(--ml-yellow);
+  --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0,0,0,0.7)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  --bs-navbar-toggler-border-color: rgba(0,0,0,.20);
+}
 .ml-nav .nav-link {
   color: var(--text-dark);
   font-size: 14px;
 }
-
 .ml-nav .nav-link:hover {
   color: #000;
   text-decoration: underline;
 }
-
-/* Link activo (Inicio / Productos / Contacto) */
 .ml-nav .nav-link.active {
   font-weight: 600;
   text-decoration: underline;
 }
+.ml-nav .nav-link:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 0.25rem rgba(52, 131, 250, 0.25);
+  border-radius: 6px;
+}
+.ml-nav .navbar-toggler {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
 
-/* =========================
-   HOME (bienvenida + destacados)
-   ========================= */
+.ml-link {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.ml-link--disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  text-decoration: none;
+}
+.ml-link--disabled:hover {
+  text-decoration: none;
+}
+
+/* ===== Mobile-first: menú hamburguesa prolijo ===== */
+@media (max-width: 767.98px) {
+  .ml-nav {
+    padding: 8px 0;
+    /* Botón hamburguesa más "liviano" */
+  }
+  .ml-nav .navbar-toggler {
+    background: #fff;
+    border: 1px solid #d9d9d9;
+    border-radius: 12px;
+    padding: 8px 10px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  }
+  .ml-nav .navbar-toggler:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 0.25rem rgba(52, 131, 250, 0.25);
+  }
+  .ml-nav {
+    /* Panel del menú abierto (la caja blanca) */
+  }
+  .ml-nav .navbar-collapse {
+    margin-top: 10px;
+    background: #fff;
+    border: 1px solid #d9d9d9;
+    border-radius: 14px;
+    padding: 10px;
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.12);
+  }
+  .ml-nav {
+    /* Lista vertical prolija */
+  }
+  .ml-nav .navbar-nav {
+    width: 100%;
+    padding: 0;
+    gap: 6px;
+  }
+  .ml-nav {
+    /* Links como "items" */
+  }
+  .ml-nav .nav-link {
+    padding: 10px 12px;
+    border-radius: 12px;
+    text-decoration: none;
+  }
+  .ml-nav .nav-link:hover {
+    background: rgba(0, 0, 0, 0.04);
+    text-decoration: none;
+  }
+  .ml-nav .nav-link.active {
+    background: rgba(52, 131, 250, 0.12);
+    font-weight: 700;
+    text-decoration: none;
+  }
+}
+/* sass/layout/_footer.scss */
+.ml-footer {
+  text-align: center;
+  padding: 20px 0;
+}
+@media (max-width: 576px) {
+  .ml-footer {
+    padding: 25px 0;
+  }
+}
+.ml-footer .ml-social {
+  width: 36px;
+  height: auto;
+  margin: 0 6px;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+.ml-footer .ml-social:hover {
+  transform: translateY(-2px) scale(1.03);
+  filter: saturate(1.05);
+}
+.ml-footer .ml-social:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 0.25rem rgba(52, 131, 250, 0.25);
+  border-radius: 6px;
+}
+
+/* Components */
+/* sass/components/_buttons.scss */
+/* Botón primary parecido a ML */
+.btn-primary {
+  background-color: var(--ml-blue);
+  border-color: var(--ml-blue);
+  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+.btn-primary:hover {
+  background-color: #2968c8;
+  border-color: #2968c8;
+  transform: translateY(-1px);
+}
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-outline-primary {
+  border-color: var(--ml-blue);
+  color: var(--ml-blue);
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+.btn-outline-primary:hover {
+  background-color: var(--ml-blue);
+  color: #fff;
+  transform: translateY(-1px);
+}
+.btn-outline-primary:active {
+  transform: translateY(0);
+}
+
+/* sass/components/_cards.scss */
+.card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+  height: 170px;
+  object-fit: cover;
+}
+@media (max-width: 576px) {
+  .card-img-top {
+    height: 150px;
+  }
+}
+
+/* Pages */
+/* sass/pages/_home.scss */
+.home-section {
+  margin-bottom: 18px;
+}
+
 .home-box {
-  background: #fff;
-  border: 1px solid var(--border-soft);
-  border-radius: 8px;
   padding: 16px;
 }
 
@@ -99,80 +329,86 @@ main {
   font-weight: 600;
 }
 
-.home-section {
-  margin-bottom: 18px;
-}
-
-/* Banner de "envío gratis" (home) */
+/* Banner de envío gratis */
 .alert-info {
   border: 1px solid var(--border-soft);
 }
 
-/* =========================
-   TARJETAS / PRODUCTOS
-   ========================= */
-.card {
-  border: 1px solid var(--border-soft);
-  border-radius: 8px;
-  transition: transform 0.2s;
+/* CSS GRID */
+.feature-grid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(2, 1fr);
+  /* media queries */
+}
+@media (min-width: 768px) {
+  .feature-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (min-width: 992px) {
+  .feature-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
 }
 
-.card-img-top {
-  height: 170px;
-  object-fit: cover;
+.feature-card {
+  padding: 12px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-
-.card:hover {
+.feature-card:hover {
   transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+.feature-card:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 0.25rem rgba(52, 131, 250, 0.25);
+  border-radius: 6px;
 }
 
-/* Botón primary más parecido a ML */
-.btn-primary {
-  background-color: var(--ml-blue);
-  border-color: var(--ml-blue);
+/* sass/pages/_productos.scss */
+/* Pequeños refinamientos visuales */
+.list-group-item {
+  transition: background-color 0.2s ease;
+}
+.list-group-item:hover {
+  background-color: rgba(0, 0, 0, 0.03);
 }
 
-.btn-primary:hover {
-  background-color: #2968c8;
-  border-color: #2968c8;
+.promo-grid {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 768px) {
+  .promo-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 992px) {
+  .promo-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
-/* =========================
-   CONTACTO (ayuda + formulario)
-   ========================= */
-.btn-outline-primary {
-  border-color: var(--ml-blue);
-  color: var(--ml-blue);
-}
-
-.btn-outline-primary:hover {
-  background-color: var(--ml-blue);
-  color: #fff;
-}
-
-/* =========================
-   FOOTER
-   ========================= */
-footer {
+.promo-item {
+  padding: 12px;
   text-align: center;
-  padding: 20px 0;
+  font-weight: 600;
 }
 
-.ml-social {
-  width: 36px;
-  height: auto;
-  margin: 0 6px;
+/* sass/pages/_contacto.scss */
+.contact-form-card {
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* =========================
-   RESPONSIVE (detalle simple)
-   ========================= */
-@media (max-width: 576px) {
-  .card-img-top {
-    height: 150px;
-  }
-
-  footer {
-    padding: 25px 0;
-  }
+.contact-card {
+  height: 100%;
 }
+
+/*# sourceMappingURL=style.css.map */

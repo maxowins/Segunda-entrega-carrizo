@@ -1,0 +1,50 @@
+/* sass/pages/_home.scss */
+
+.home-section {
+  margin-bottom: 18px;
+}
+
+.home-box {
+  @extend %box-base;
+  padding: 16px;
+}
+
+.home-title {
+  font-weight: 600;
+}
+
+/* Banner de envío gratis */
+.alert-info {
+  border: 1px solid var(--border-soft);
+}
+/* CSS GRID */
+.feature-grid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(2, 1fr);
+
+  /* media queries */
+  @include min($bp-md) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include min($bp-lg) {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+.feature-card {
+  @extend %box-base;
+  padding: 12px;
+  text-decoration: none;
+  color: $text-dark;
+  font-weight: 600;
+  transition: transform $transition-fast, box-shadow $transition-fast;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: $shadow-soft;
+  }
+
+  @include focusable;
+}

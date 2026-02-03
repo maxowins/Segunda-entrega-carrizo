@@ -1,0 +1,12 @@
+/* sass/utilities/_placeholders.scss */
+
+%box-base {
+  background: #fff;
+  border: 1px solid $border-soft;
+  border-radius: $radius;
+}
+
+%card-base {
+  border: 1px solid $border-soft;
+  border-radius: $radius;
+}

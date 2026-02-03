@@ -1,0 +1,24 @@
+/* sass/layout/_footer.scss */
+
+.ml-footer {
+  text-align: center;
+  padding: $footer-padding 0;
+
+  @include max($bp-sm) {
+    padding: $footer-padding-sm 0;
+  }
+
+  .ml-social {
+    width: $social-size;
+    height: auto;
+    margin: 0 6px;
+    transition: transform $transition-fast, filter $transition-fast;
+
+    &:hover {
+      transform: translateY(-2px) scale(1.03);
+      filter: saturate(1.05);
+    }
+
+    @include focusable;
+  }
+}

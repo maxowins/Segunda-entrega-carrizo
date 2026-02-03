@@ -6,10 +6,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <meta name="description"
+    content="Contacto de De todo Bazar. Escribinos tu consulta y te respondemos lo antes posible.">
+
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- CSS propio -->
+  <!-- CSS propio (generado desde SASS) -->
   <link rel="stylesheet" href="../css/style.css">
 
   <!-- Favicon -->
@@ -18,16 +21,21 @@
   <title>Contacto - De todo Bazar</title>
 </head>
 
-<body>
+<body class="d-flex flex-column min-vh-100">
+
+  <!-- Skip link (accesibilidad) -->
+  <a class="visually-hidden-focusable p-2" href="#contenido">Saltar al contenido</a>
 
   <!-- Header -->
   <header class="ml-header">
+
+    <!-- Top bar -->
     <div class="container py-3">
       <div class="row align-items-center g-2">
 
         <!-- Logo -->
         <div class="col-12 col-md-2 text-center text-md-start">
-          <a href="../index.html" class="d-inline-flex align-items-center text-decoration-none">
+          <a href="../index.html" class="d-inline-flex align-items-center text-decoration-none" aria-label="Ir al inicio">
             <img src="../img/logo.png" alt="Logo de De todo Bazar" class="ml-logo">
             <span class="ms-2 fw-semibold text-dark">De todo Bazar</span>
           </a>
@@ -35,49 +43,66 @@
 
         <!-- Buscador -->
         <div class="col-12 col-md-7">
-          <div class="input-group">
-            <input type="text" class="form-control" placeholder="Buscá tu consulta" aria-label="Buscar">
-            <button class="btn btn-light" type="button" aria-label="Buscar">Buscar</button>
-          </div>
+          <form class="input-group" action="#" method="get" role="search" aria-label="Buscador de consultas">
+            <label for="busqueda" class="visually-hidden">Buscar consultas</label>
+            <input id="busqueda" name="q" type="search" class="form-control" placeholder="Buscá tu consulta"
+              aria-label="Buscá tu consulta">
+            <button class="btn btn-light" type="submit" aria-label="Buscar">Buscar</button>
+          </form>
         </div>
 
         <!-- Accesos -->
         <div class="col-12 col-md-3">
-          <div class="d-flex justify-content-center justify-content-md-end gap-3">
-            <a href="#" class="ml-link" aria-label="Mi cuenta">👤 Mi cuenta</a>
-            <a href="#" class="ml-link" aria-label="Carrito">🛒 Carrito</a>
-            <a href="#" class="ml-link d-none d-md-inline" aria-label="Notificaciones">🔔 Notificaciones</a>
+          <div class="d-flex justify-content-center justify-content-md-end gap-3 flex-wrap">
+            <a href="#" class="ml-link" aria-label="Ir a contacto (Mi cuenta)">👤 Mi cuenta</a>
+            <a href="#" class="ml-link" aria-label="Ir a productos (Carrito)">🛒 Carrito</a>
+            <a href="contacto.html" class="ml-link d-none d-md-inline" aria-label="Ir a contacto (Notificaciones)">🔔 Notificaciones</a>
           </div>
         </div>
 
       </div>
     </div>
 
-    <!-- Navegación -->
-    <nav class="ml-nav">
+    <!-- Navegación (responsive con toggler) -->
+    <nav class="navbar navbar-expand-md ml-nav" aria-label="Navegación principal">
       <div class="container">
-        <ul class="nav py-2">
-          <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
-          <li class="nav-item"><a class="nav-link" href="productos.html">Productos</a></li>
-          <li class="nav-item"><a class="nav-link active" aria-current="page" href="contacto.html">Contacto</a></li>
-        </ul>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navPrincipal"
+          aria-controls="navPrincipal" aria-expanded="false" aria-label="Mostrar u ocultar navegación">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navPrincipal">
+          <ul class="navbar-nav me-auto py-2">
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="productos.html">Productos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="contacto.html">Contacto</a>
+            </li>
+          </ul>
+        </div>
+
       </div>
     </nav>
   </header>
 
   <!-- Contenido principal -->
-  <main class="container my-4">
+    <main id="contenido" class="container my-4 grow">
 
     <section class="mb-3">
       <h1 class="h3 mb-1">Contacto</h1>
       <p class="text-muted mb-0">Escribinos y te respondemos lo antes posible.</p>
     </section>
 
-    <div class="d-flex flex-column gap-3">
+    <div class="row g-3 contact-grid">
 
       <!-- Ayuda rápida -->
-      <section>
-        <div class="card">
+      <aside class="col-12 col-md-4">
+        <section class="card contact-card">
           <div class="card-body">
             <h2 class="h6 mb-3">Ayuda rápida</h2>
 
@@ -96,42 +121,52 @@
               </a>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </aside>
 
       <!-- Formulario -->
-      <section>
-        <div class="card mx-auto" style="max-width: 720px;">
+      <section class="col-12 col-md-8" aria-label="Formulario de contacto">
+        <div class="card contact-form-card">
           <div class="card-body">
             <h2 class="h6 mb-3">Formulario</h2>
 
-            <form>
-              <div class="mb-3">
-                <label for="nombre" class="form-label">Nombre</label>
-                <input id="nombre" type="text" class="form-control" placeholder="Tu nombre" required>
-              </div>
+            <form action="#" method="post">
+              <div class="row g-3">
+                <div class="col-12 col-md-6">
+                  <label for="nombre" class="form-label">Nombre</label>
+                  <input id="nombre" name="nombre" type="text" class="form-control" placeholder="Tu nombre" required
+                    autocomplete="given-name">
+                </div>
 
-              <div class="mb-3">
-                <label for="apellido" class="form-label">Apellido</label>
-                <input id="apellido" type="text" class="form-control" placeholder="Tu apellido" required>
-              </div>
+                <div class="col-12 col-md-6">
+                  <label for="apellido" class="form-label">Apellido</label>
+                  <input id="apellido" name="apellido" type="text" class="form-control" placeholder="Tu apellido"
+                    required autocomplete="family-name">
+                </div>
 
-              <div class="mb-3">
-                <label for="email" class="form-label">Email</label>
-                <input id="email" type="email" class="form-control" placeholder="nombre@ejemplo.com" required>
-              </div>
+                <div class="col-12">
+                  <label for="email" class="form-label">Email</label>
+                  <input id="email" name="email" type="email" class="form-control" placeholder="nombre@ejemplo.com"
+                    required autocomplete="email">
+                </div>
 
-              <div class="mb-3">
-                <label for="telefono" class="form-label">Teléfono (opcional)</label>
-                <input id="telefono" type="text" class="form-control" placeholder="11 1234 5678">
-              </div>
+                <div class="col-12">
+                  <label for="telefono" class="form-label">Teléfono (opcional)</label>
+                  <input id="telefono" name="telefono" type="tel" class="form-control" placeholder="11 1234 5678"
+                    autocomplete="tel">
+                </div>
 
-              <div class="mb-3">
-                <label for="mensaje" class="form-label">Mensaje</label>
-                <textarea id="mensaje" class="form-control" rows="4" placeholder="Contanos tu consulta..." required></textarea>
-              </div>
+                <div class="col-12">
+                  <label for="mensaje" class="form-label">Mensaje</label>
+                  <textarea id="mensaje" name="mensaje" class="form-control" rows="4"
+                    placeholder="Contanos tu consulta..." required></textarea>
+                </div>
 
-              <button type="submit" class="btn btn-primary" aria-label="Enviar formulario de contacto">Enviar</button>
+                <div class="col-12 d-flex gap-2 flex-wrap">
+                  <button type="submit" class="btn btn-primary" aria-label="Enviar formulario de contacto">Enviar</button>
+                  <button type="reset" class="btn btn-outline-secondary" aria-label="Limpiar formulario">Limpiar</button>
+                </div>
+              </div>
             </form>
 
           </div>
@@ -143,20 +178,24 @@
   </main>
 
   <!-- Footer -->
-  <footer class="text-center py-4">
-    <p class="mb-2">Todos los derechos reservados</p>
+  <footer class="ml-footer text-center py-4">
+    <div class="container">
+      <p class="mb-2">Todos los derechos reservados</p>
 
-    <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-      <img src="../img/instagram.png" alt="Logo de Instagram" class="ml-social">
-    </a>
+      <div class="d-inline-flex gap-3 align-items-center justify-content-center flex-wrap">
+        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <img src="../img/instagram.png" alt="Logo de Instagram" class="ml-social" loading="lazy">
+        </a>
 
-    <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-      <img src="../img/facebook.png" alt="Logo de Facebook" class="ml-social">
-    </a>
+        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+          <img src="../img/facebook.png" alt="Logo de Facebook" class="ml-social" loading="lazy">
+        </a>
 
-    <a href="https://x.com/?lang=es" target="_blank" rel="noopener noreferrer" aria-label="X">
-      <img src="../img/X.png" alt="Logo de X" class="ml-social">
-    </a>
+        <a href="https://x.com/?lang=es" target="_blank" rel="noopener noreferrer" aria-label="X">
+          <img src="../img/X.png" alt="Logo de X" class="ml-social" loading="lazy">
+        </a>
+      </div>
+    </div>
   </footer>
 
   <!-- Bootstrap JS -->
