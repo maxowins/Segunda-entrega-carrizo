@@ -15,10 +15,15 @@
   <!-- CSS propio (generado desde SASS) -->
   <link rel="stylesheet" href="../css/style.css">
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="../img/logo.png">
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
   <title>Contacto - De todo Bazar</title>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Contacto | De todo Bazar">
+  <meta property="og:description" content="¿Tenés dudas? Escribinos y te responderemos a la brevedad.">
+  <meta property="og:type" content="website">
 </head>
 
 <body class="d-flex flex-column min-vh-100">
@@ -35,9 +40,10 @@
 
         <!-- Logo -->
         <div class="col-12 col-md-2 text-center text-md-start">
-          <a href="../index.html" class="d-inline-flex align-items-center text-decoration-none" aria-label="Ir al inicio">
+          <a href="../index.html" class="d-inline-flex align-items-center text-decoration-none"
+            aria-label="Ir al inicio">
             <img src="../img/logo.png" alt="Logo de De todo Bazar" class="ml-logo">
-            <span class="ms-2 fw-semibold text-dark">De todo Bazar</span>
+            <span class="ms-2 fw-bold text-white fs-4">De todo Bazar</span>
           </a>
         </div>
 
@@ -45,30 +51,28 @@
         <div class="col-12 col-md-7">
           <form class="input-group" action="#" method="get" role="search" aria-label="Buscador de consultas">
             <label for="busqueda" class="visually-hidden">Buscar consultas</label>
-            <input id="busqueda" name="q" type="search" class="form-control" placeholder="Buscá tu consulta"
-              aria-label="Buscá tu consulta">
-            <button class="btn btn-light" type="submit" aria-label="Buscar">Buscar</button>
+            <input id="busqueda" name="q" type="search" class="form-control border-0"
+              placeholder="¿En qué podemos ayudarte?" aria-label="Buscador de consultas">
+            <button class="btn btn-warning fw-bold" type="submit" aria-label="Buscar">Buscar</button>
           </form>
         </div>
 
         <!-- Accesos -->
         <div class="col-12 col-md-3">
           <div class="d-flex justify-content-center justify-content-md-end gap-3 flex-wrap">
-            <a href="#" class="ml-link" aria-label="Ir a contacto (Mi cuenta)">👤 Mi cuenta</a>
-            <a href="#" class="ml-link" aria-label="Ir a productos (Carrito)">🛒 Carrito</a>
-            <a href="contacto.html" class="ml-link d-none d-md-inline" aria-label="Ir a contacto (Notificaciones)">🔔 Notificaciones</a>
+            <a href="#" class="ml-link" aria-label="Mi cuenta">👤 Mi cuenta</a>
+            <a href="#" class="ml-link" aria-label="Carrito">🛒 Mi Carrito</a>
           </div>
         </div>
 
       </div>
     </div>
 
-    <!-- Navegación (responsive con toggler) -->
-    <nav class="navbar navbar-expand-md ml-nav" aria-label="Navegación principal">
+    <!-- Navegación -->
+    <nav class="navbar navbar-expand-md ml-nav shadow-sm" aria-label="Navegación principal">
       <div class="container">
-
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navPrincipal"
-          aria-controls="navPrincipal" aria-expanded="false" aria-label="Mostrar u ocultar navegación">
+        <button class="navbar-toggler border-white" type="button" data-bs-toggle="collapse"
+          data-bs-target="#navPrincipal" aria-controls="navPrincipal" aria-expanded="false" aria-label="Menú">
           <span class="navbar-toggler-icon"></span>
         </button>
 
@@ -81,43 +85,46 @@
               <a class="nav-link" href="productos.html">Productos</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" href="servicios.html">Servicios</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="nosotros.html">Nosotros</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="contacto.html">Contacto</a>
             </li>
           </ul>
         </div>
-
       </div>
     </nav>
   </header>
 
   <!-- Contenido principal -->
-    <main id="contenido" class="container my-4 grow">
+  <main id="contenido" class="container my-4 grow">
 
     <section class="mb-3">
       <h1 class="h3 mb-1">Contacto</h1>
       <p class="text-muted mb-0">Escribinos y te respondemos lo antes posible.</p>
     </section>
 
-    <div class="row g-3 contact-grid">
+    <div class="row g-4 contact-grid">
 
       <!-- Ayuda rápida -->
-      <aside class="col-12 col-md-4">
-        <section class="card contact-card">
+      <aside class="col-12 col-md-4" data-aos="fade-right">
+        <section class="card contact-card border-0 shadow-sm h-100">
           <div class="card-body">
-            <h2 class="h6 mb-3">Ayuda rápida</h2>
+            <h2 class="h5 fw-bold mb-4">Ayuda rápida</h2>
 
-            <div class="d-grid gap-2">
-              <a class="btn btn-outline-primary btn-sm text-start" href="#" aria-label="Ir a devoluciones y cambios">
+            <div class="d-grid gap-3">
+              <a class="btn btn-outline-primary text-start p-3 rounded-3" href="#"
+                aria-label="Ir a devoluciones y cambios">
                 🔄 Devoluciones y cambios
               </a>
-              <a class="btn btn-outline-primary btn-sm text-start" href="#" aria-label="Ir a reclamos">
+              <a class="btn btn-outline-primary text-start p-3 rounded-3" href="#" aria-label="Ir a reclamos">
                 📦 Reclamos
               </a>
-              <a class="btn btn-outline-primary btn-sm text-start" href="#" aria-label="Ir a envíos">
+              <a class="btn btn-outline-primary text-start p-3 rounded-3" href="#" aria-label="Ir a envíos">
                 📬 Envíos
-              </a>
-              <a class="btn btn-outline-primary btn-sm text-start" href="#" aria-label="Ir a promociones">
-                🏷️ Promociones
               </a>
             </div>
           </div>
@@ -125,10 +132,10 @@
       </aside>
 
       <!-- Formulario -->
-      <section class="col-12 col-md-8" aria-label="Formulario de contacto">
-        <div class="card contact-form-card">
-          <div class="card-body">
-            <h2 class="h6 mb-3">Formulario</h2>
+      <section class="col-12 col-md-8" aria-label="Formulario de contacto" data-aos="fade-left">
+        <div class="card contact-form-card border-0 shadow-sm">
+          <div class="card-body p-4">
+            <h2 class="h5 fw-bold mb-4">Mandanos un mensaje</h2>
 
             <form action="#" method="post">
               <div class="row g-3">
@@ -163,8 +170,10 @@
                 </div>
 
                 <div class="col-12 d-flex gap-2 flex-wrap">
-                  <button type="submit" class="btn btn-primary" aria-label="Enviar formulario de contacto">Enviar</button>
-                  <button type="reset" class="btn btn-outline-secondary" aria-label="Limpiar formulario">Limpiar</button>
+                  <button type="submit" class="btn btn-primary"
+                    aria-label="Enviar formulario de contacto">Enviar</button>
+                  <button type="reset" class="btn btn-outline-secondary"
+                    aria-label="Limpiar formulario">Limpiar</button>
                 </div>
               </div>
             </form>
@@ -198,8 +207,12 @@
     </div>
   </footer>
 
-  <!-- Bootstrap JS -->
+  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 800, once: true });
+  </script>
 </body>
 
 </html>

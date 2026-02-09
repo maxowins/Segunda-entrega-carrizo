@@ -1,38 +1,37 @@
 /* sass/utilities/_variables.scss */
 
-/* Paleta */
-$ml-yellow: #fff159;
-$ml-yellow-border: #e3d95f;
-$ml-blue: #3483fa;
-$ml-gray: #ededed;
-$text-dark: #333;
-$border-soft: #d9d9d9;
+/* Paleta Profesional (Basada en Indigo & Amber) */
+$primary-color: #3f51b5; /* Indigo */
+$primary-light: #757de8;
+$primary-dark: #002984;
+
+$secondary-color: #ffc107; /* Amber */
+$secondary-light: #fff350;
+$secondary-dark: #c79100;
+
+$bg-light: #f5f5f5;
+$white: #ffffff;
+$text-dark: #212121;
+$text-muted: #757575;
+$border-color: #e0e0e0;
 
 /* Tipografía */
-$font-base: Arial, Helvetica, sans-serif;
+$font-base: 'Inter', system-ui, -apple-system, sans-serif;
 
 /* Medidas */
-$radius: 8px;
-$radius-lg: 16px;
+$radius: 12px;
+$radius-sm: 6px;
+$radius-lg: 20px;
 
-$logo-size: 48px;
-$social-size: 36px;
+$logo-size: 50px;
+$social-size: 32px;
 
-$card-img-h: 170px;
-$card-img-h-sm: 150px;
-
-/* Sombras / transiciones */
-$shadow-soft: 0 8px 24px rgba(0, 0, 0, 0.10);
-$transition-fast: 0.2s ease;
+$card-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+$card-shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.15);
+$transition-base: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 
 /* Breakpoints */
 $bp-sm: 576px;
 $bp-md: 768px;
 $bp-lg: 992px;
-
-/* Extra: operador (ejemplo) */
-$footer-padding: 20px;
-$footer-padding-sm: $footer-padding + 5px;
-
-/* Focus ring */
-$focus-ring: 0 0 0 0.25rem rgba(52, 131, 250, 0.25);
+$bp-xl: 1200px;

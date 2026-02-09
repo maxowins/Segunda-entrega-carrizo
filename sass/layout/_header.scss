@@ -1,8 +1,9 @@
 /* sass/layout/_header.scss */
 
 .ml-header {
-  background-color: var(--ml-yellow);
-  border-bottom: 1px solid $ml-yellow-border;
+  background-color: $primary-color;
+  border-bottom: 1px solid $primary-dark;
+  color: $white;
 
   .ml-logo {
     width: $logo-size;
@@ -16,7 +17,7 @@
 
   .ml-link {
     text-decoration: none;
-    color: var(--text-dark);
+    color: $white;
     font-size: 14px;
 
     &:hover {
@@ -29,15 +30,16 @@
 
 /* Nav (sirve para navbar y para nav clásico) */
 .ml-nav {
-  background-color: var(--ml-yellow);
+  background-color: $primary-dark;
 
 
   --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0,0,0,0.7)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-  --bs-navbar-toggler-border-color: rgba(0,0,0,.20);
+  --bs-navbar-toggler-border-color: rgba(0, 0, 0, .20);
 
   .nav-link {
-    color: var(--text-dark);
-    font-size: 14px;
+    color: rgba($white, 0.85);
+    font-size: 15px;
+    font-weight: 500;
 
     &:hover {
       color: #000;
@@ -56,6 +58,7 @@
     border: 1px solid rgba(0, 0, 0, 0.20);
   }
 }
+
 .ml-link {
   background: transparent;
   border: 0;
@@ -72,6 +75,7 @@
     text-decoration: none;
   }
 }
+
 /* ===== Mobile-first: menú hamburguesa prolijo ===== */
 @media (max-width: 767.98px) {
   .ml-nav {
@@ -120,7 +124,7 @@
       }
 
       &.active {
-        background: rgba(52, 131, 250, 0.12);
+        background: rgba($secondary-color, 0.2);
         font-weight: 700;
         text-decoration: none;
       }

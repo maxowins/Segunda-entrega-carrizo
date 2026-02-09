@@ -1,0 +1,30 @@
+/* sass/pages/_servicios.scss */
+.servicios-hero {
+    background: linear-gradient(135deg, $primary-color 0%, $primary-dark 100%);
+    color: $white;
+    padding: 80px 0;
+    border-radius: $radius-lg;
+    margin-bottom: 50px;
+}
+
+.servicios-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.servicio-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    background: $bg-light;
+    border-left: 5px solid $secondary-color;
+    border-radius: $radius-sm;
+    transition: $transition-base;
+
+    &:hover {
+        background: $white;
+        box-shadow: $card-shadow;
+    }
+}
