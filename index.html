@@ -1,89 +1,228 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" type="image/png" href="img/logo.png">
-    <title>De todo Bazar</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description"
+    content="De todo Bazar: productos para el hogar, accesorios y artículos prácticos para el día a día. Ofertas semanales y novedades.">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- CSS propio (generado desde SASS) -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <title>De todo Bazar | Productos para el Hogar y Decoración</title>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="De todo Bazar | Todo para tu hogar">
+  <meta property="og:description"
+    content="Productos para el hogar, accesorios y artículos prácticos con envío a todo el país.">
+  <meta property="og:image" content="https://tudominio.com/img/og-image.jpg">
+  <meta property="og:url" content="https://tu-github-pages.github.io/">
+  <meta property="og:type" content="website">
 </head>
 
-<body>
+<body class="d-flex flex-column min-vh-100">
 
-    <!-- header -->
-    <header>
-        <div class="encabezado">
-            <img src="/img/logo.png" alt="logo" class="logo">
-            <h2 class="titulo-web">De todo Bazar</h2>
-            <div class="iconos">
-                <span>👤</span>
-                <label>Mi cuenta</label>
-                <span>🛒</span>
-                <label>Carrito</label>
-                <span>🔔</span>
-                <label>Notificaciones</label>
-            </div>
+  <!-- Skip link (accesibilidad) -->
+  <a class="visually-hidden-focusable p-2" href="#contenido">Saltar al contenido</a>
+
+  <!-- Header -->
+  <header class="ml-header">
+
+    <!-- Top bar -->
+    <div class="container py-3">
+      <div class="row align-items-center g-2">
+
+        <!-- Logo -->
+        <div class="col-12 col-md-2 text-center text-md-start">
+          <a href="index.html" class="d-inline-flex align-items-center text-decoration-none" aria-label="Ir al inicio">
+            <img src="img/logo.png" alt="Logo de De todo Bazar" class="ml-logo">
+            <span class="ms-2 fw-bold text-white fs-4">De todo Bazar</span>
+          </a>
         </div>
 
-    <nav>
-        <ul>
-            <li><a href="/index.html">Inicio</a></li>
-            <li><a href="/pages/productos.html">Productos</a></li>
-            <li><a href="/pages/contacto.html">Contacto</a></li>
-        </ul>
+        <!-- Buscador -->
+        <div class="col-12 col-md-7">
+          <form class="input-group" action="#" method="get" role="search" aria-label="Buscador de productos">
+            <label for="busqueda" class="visually-hidden">Buscar productos</label>
+            <input id="busqueda" name="q" type="search" class="form-control border-0"
+              placeholder="Encontrá lo que buscás..." aria-label="Buscar productos">
+            <button class="btn btn-warning fw-bold" type="submit" aria-label="Buscar">Buscar</button>
+          </form>
+        </div>
+
+        <!-- Accesos -->
+        <div class="col-12 col-md-3">
+          <div class="d-flex justify-content-center justify-content-md-end gap-3 flex-wrap">
+            <a href="#" class="ml-link" aria-label="Mi cuenta">👤 Mi cuenta</a>
+            <a href="#" class="ml-link" aria-label="Carrito">🛒 Mi Carrito</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Navegación -->
+    <nav class="navbar navbar-expand-md ml-nav shadow-sm" aria-label="Navegación principal">
+      <div class="container">
+        <button class="navbar-toggler border-white" type="button" data-bs-toggle="collapse"
+          data-bs-target="#navPrincipal" aria-controls="navPrincipal" aria-expanded="false" aria-label="Menú">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navPrincipal">
+          <ul class="navbar-nav me-auto py-2">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="pages/productos.html">Productos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="pages/servicios.html">Servicios</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="pages/nosotros.html">Nosotros</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="pages/contacto.html">Contacto</a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </nav>
+  </header>
 
-        <form class="buscador">
-            <input type="text" placeholder="Buscar productos, marcas y más...">
-        </form>
-    </header>
+  <!-- Contenido principal -->
+  <main id="contenido" class="container my-4 grow">
 
-    <!-- Contenido principal-->
-    <main>
-        <section>
-            <h1>Bienvenido a De Todo Bazar</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod assumenda delectus quae, cum voluptas animi autem pariatur voluptatem, tempore, at harum vitae. Omnis vel molestiae quod, quas magnam laborum nobis.</p>
+    <!-- Bienvenida -->
+    <section class="mb-4 home-section" data-aos="fade-up">
+      <div class="home-box bg-white shadow-sm p-4 rounded-4">
+        <h1 class="h2 fw-bold text-primary mb-3">Bienvenido a De todo Bazar</h1>
+        <p class="lead mb-2">Productos para el hogar, accesorios y artículos prácticos para el día a día.</p>
+        <p class="text-muted mb-0">Encontrá ofertas semanales y novedades en un solo lugar.</p>
+      </div>
+    </section>
+
+    <!-- Destacados -->
+    <section class="home-section" data-aos="fade-up">
+      <div class="home-box">
+
+        <div class="alert alert-warning border-0 shadow-sm py-3 mb-4 rounded-3" role="alert">
+          <strong>📦 ¡Envíos Flex!</strong> Entrega en el día en compras mayores a $25.000
+        </div>
+        <h2 class="h4 fw-bold mb-4 border-bottom pb-2">Destacados de la semana</h2>
+        <!-- Categorías populares (CSS Grid) -->
+        <section class="home-section">
+          <div class="home-box">
+            <h2 class="h5 mb-3 home-title">Categorías populares</h2>
+
+            <div class="feature-grid" aria-label="Categorías populares">
+              <a class="feature-card" href="pages/productos.html">👓 Lentes</a>
+              <a class="feature-card" href="pages/productos.html">🧩 Decoración</a>
+              <a class="feature-card" href="pages/productos.html">⌨️ Teclados</a>
+              <a class="feature-card" href="pages/productos.html">👟 Zapatillas</a>
+              <a class="feature-card" href="pages/productos.html">🔌 Accesorios</a>
+              <a class="feature-card" href="pages/productos.html">🎁 Regalos</a>
+            </div>
+          </div>
         </section>
 
-        <div class="grilla">
 
-            <article>
-                <h2>Lentes Bluelight</h2>
-                <img src="img/gafas.webp" alt="">
-            </article>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
 
-            <article>
-                <h2>Portallaves</h2>
-                <img src="img/portallaves.webp" alt="">
+          <div class="col" data-aos="zoom-in" data-aos-delay="100">
+            <article class="card h-100 border-0 shadow-sm">
+              <img src="img/gafas.webp" class="card-img-top img-fluid"
+                alt="Lentes Bluelight para protección de pantallas" loading="lazy">
+              <div class="card-body">
+                <h3 class="h6 card-title">Lentes Bluelight</h3>
+                <p class="card-text text-muted mb-2">Protección para pantallas.</p>
+                <a href="pages/productos.html" class="btn btn-sm btn-primary" aria-label="Ver más productos">Ver más</a>
+              </div>
             </article>
+          </div>
 
-            <article>
-                <h2>Teclado</h2>
-                <img src="img/teclado.webp" alt="">
+          <div class="col">
+            <article class="card h-100">
+              <img src="img/portallaves.webp" class="card-img-top img-fluid" alt="Portallaves decorativo para pared"
+                loading="lazy">
+              <div class="card-body">
+                <h3 class="h6 card-title">Portallaves</h3>
+                <p class="card-text text-muted mb-2">Orden y decoración.</p>
+                <a href="pages/productos.html" class="btn btn-sm btn-primary" aria-label="Ver más productos">Ver más</a>
+              </div>
             </article>
+          </div>
 
-            <article>
-                <h2>Zapatillas</h2>
-                <img src="img/zapatillas.webp" alt="">
+          <div class="col">
+            <article class="card h-100">
+              <img src="img/teclado.webp" class="card-img-top img-fluid" alt="Teclado para escritorio" loading="lazy">
+              <div class="card-body">
+                <h3 class="h6 card-title">Teclado</h3>
+                <p class="card-text text-muted mb-2">Ideal para escritorio.</p>
+                <a href="pages/productos.html" class="btn btn-sm btn-primary" aria-label="Ver más productos">Ver más</a>
+              </div>
             </article>
+          </div>
+
+          <div class="col">
+            <article class="card h-100">
+              <img src="img/zapatillas.webp" class="card-img-top img-fluid" alt="Zapatillas deportivas para uso diario"
+                loading="lazy">
+              <div class="card-body">
+                <h3 class="h6 card-title">Zapatillas</h3>
+                <p class="card-text text-muted mb-2">Comodidad para todos los días.</p>
+                <a href="pages/productos.html" class="btn btn-sm btn-primary" aria-label="Ver más productos">Ver más</a>
+              </div>
+            </article>
+          </div>
 
         </div>
-    </main>
+      </div>
+    </section>
 
-    <!-- footer -->
-    <footer>
-        <p>Todos los derechos reservados</p>
-        <a href="https://www.instagram.com" target="_blank">
-            <img src="img/instagram.png" alt="instagram">
-        </a>
-        <a href="https://www.facebook.com" target="_blank">
-            <img src="/img/facebook.png" alt="facebook.png">
-        </a>
-        <a href="https://x.com/?lang=es" target="_blank">
-            <img src="/img/X.png" alt="X.png">
-        </a>
-    </footer>
+  </main>
 
+  <!-- Footer -->
+  <footer class="ml-footer text-center py-4">
+    <div class="container">
+      <p class="mb-2">Todos los derechos reservados</p>
+
+      <div class="d-inline-flex gap-3 align-items-center justify-content-center flex-wrap">
+        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <img src="img/instagram.png" alt="Logo de Instagram" class="ml-social" loading="lazy">
+        </a>
+
+        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+          <img src="img/facebook.png" alt="Logo de Facebook" class="ml-social" loading="lazy">
+        </a>
+
+        <a href="https://x.com/?lang=es" target="_blank" rel="noopener noreferrer" aria-label="X">
+          <img src="img/X.png" alt="Logo de X" class="ml-social" loading="lazy">
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      once: true
+    });
+  </script>
 </body>
+
 </html>

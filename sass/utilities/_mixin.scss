@@ -1,0 +1,40 @@
+/* sass/utilities/_mixin.scss */
+
+@mixin max($w) {
+  @media (max-width: $w) {
+    @content;
+  }
+}
+
+@mixin min($w) {
+  @media (min-width: $w) {
+    @content;
+  }
+}
+
+@mixin flex-center($gap: 8px) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: $gap;
+}
+
+@mixin hover-lift($y: -2px, $shadow: null) {
+  transition: transform $transition-fast, box-shadow $transition-fast;
+
+  &:hover {
+    transform: translateY($y);
+
+    @if $shadow != null {
+      box-shadow: $shadow;
+    }
+  }
+}
+
+@mixin focusable {
+  &:focus-visible {
+    outline: none;
+    box-shadow: $focus-ring;
+    border-radius: 6px;
+  }
+}

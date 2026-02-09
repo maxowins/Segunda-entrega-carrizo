@@ -1,0 +1,25 @@
+/* sass/style.scss */
+
+/* Utilities */
+@import "utilities/variables";
+@import "utilities/mixin";
+@import "utilities/placeholders";
+
+/* Base */
+@import "base/reset";
+@import "base/globals";
+
+/* Layout */
+@import "layout/header";
+@import "layout/footer";
+
+/* Components */
+@import "components/buttons";
+@import "components/cards";
+
+/* Pages */
+@import "pages/home";
+@import "pages/productos";
+@import "pages/contacto";
+@import "pages/nosotros";
+@import "pages/servicios";

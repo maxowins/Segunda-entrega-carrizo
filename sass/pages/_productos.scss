@@ -1,0 +1,30 @@
+/* sass/pages/_productos.scss */
+
+/* Pequeños refinamientos visuales */
+.list-group-item {
+  transition: background-color $transition-fast;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.03);
+  }
+}
+.promo-grid {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 1fr;
+
+  @include min($bp-md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include min($bp-lg) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.promo-item {
+  @extend %box-base;
+  padding: 12px;
+  text-align: center;
+  font-weight: 600;
+}

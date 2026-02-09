@@ -1,0 +1,20 @@
+/* sass/components/_cards.scss */
+
+.card {
+  @extend %card-base;
+  transition: transform $transition-fast, box-shadow $transition-fast;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: $shadow-soft;
+  }
+}
+
+.card-img-top {
+  height: $card-img-h;
+  object-fit: cover;
+
+  @include max($bp-sm) {
+    height: $card-img-h-sm;
+  }
+}

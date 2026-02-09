@@ -1,0 +1,35 @@
+/* sass/base/_globals.scss */
+
+:root {
+  /* Genero variables CSS desde variables SCSS (queda prolijo y editable) */
+  --ml-yellow: #{$ml-yellow};
+  --ml-blue: #{$ml-blue};
+  --ml-gray: #{$ml-gray};
+  --text-dark: #{$text-dark};
+  --border-soft: #{$border-soft};
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-color: var(--ml-gray);
+  color: var(--text-dark);
+  font-family: $font-base;
+}
+
+/* Utilidades generadas con @each (cumple operadores/dinámico) */
+$spacings: (0, 4, 8, 12, 16, 24, 32);
+
+@each $s in $spacings {
+  .u-p-#{$s} { padding: #{$s}px; }
+  .u-gap-#{$s} { gap: #{$s}px; }
+}
+
+/* Ajustes pequeños para textos usados en productos */
+.product-desc {
+  font-size: 13px;
+  margin-bottom: 0.5rem;
+}
